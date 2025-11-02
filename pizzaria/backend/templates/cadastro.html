@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Pizza - Don Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-yellow-50 to-yellow-100 min-h-screen flex flex-col font-sans">
+
+    <!-- Navbar -->
+    <header class="bg-red-700 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide">🍕 Pizzaria Don Python</h1>
+            <a href="/" class="bg-yellow-400 hover:bg-yellow-500 text-red-900 font-semibold px-4 py-2 rounded-lg transition-all duration-200">Voltar</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo -->
+    <main class="flex-grow flex flex-col justify-center items-center py-12">
+        <div class="bg-white shadow-lg rounded-2xl w-full max-w-md p-8">
+            <h2 class="text-2xl font-bold text-center text-red-700 mb-6">Cadastrar Nova Pizza</h2>
+
+            <form action="/cadastro" method="post" class="space-y-5">
+                <div>
+                    <label for="nome" class="block text-gray-700 font-medium mb-2">Nome da Pizza</label>
+                    <input type="text" id="nome" name="nome" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-600 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="ingredientes" class="block text-gray-700 font-medium mb-2">Ingredientes</label>
+                    <textarea id="ingredientes" name="ingredientes" rows="3" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-600 focus:outline-none"></textarea>
+                </div>
+
+                <div>
+                    <label for="preco" class="block text-gray-700 font-medium mb-2">Preço</label>
+                    <input type="number" step="0.01" id="preco" name="preco" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-600 focus:outline-none">
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-red-700 text-white px-6 py-2 rounded-lg hover:bg-red-800 transition">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-red-700 text-yellow-200 text-center py-4 mt-10">
+        <p>© 2025 Pizzaria Don Python. Criado com ❤️ e Python.</p>
+    </footer>
+
+</body>
+</html>
+

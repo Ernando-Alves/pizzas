@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Don Python 🍕</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-yellow-50 to-yellow-100 min-h-screen flex flex-col font-sans">
+
+    <!-- Navbar -->
+    <header class="bg-red-700 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide">🍕 Pizzaria Don Python</h1>
+            <a href="/cadastro" class="bg-yellow-400 hover:bg-yellow-500 text-red-900 font-semibold px-4 py-2 rounded-lg transition-all duration-200">Cadastrar Pizza</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-red-700 mb-6 text-center">Nossas Pizzas</h2>
+
+        {% if pizzas %}
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            {% for pizza in pizzas %}
+            <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transform hover:-translate-y-1 transition duration-300">
+                <div class="bg-red-100 h-32 flex items-center justify-center text-5xl">🍕</div>
+                <div class="p-5 text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ pizza.nome }}</h3>
+                    <p class="text-gray-600 mb-3 text-sm">{{ pizza.ingredientes }}</p>
+                    <span class="text-lg font-bold text-red-700">R$ {{ '%.2f'|format(pizza.preco) }}</span>
+                    <form action="/excluir/{{ pizza.id }}" method="post" class="mt-4">
+                        <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">Excluir</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-center text-gray-500 text-lg">Nenhuma pizza cadastrada ainda 😢</p>
+        {% endif %}
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-red-700 text-yellow-200 text-center py-4 mt-10">
+        <p>© 2025 Pizzaria Don Python. Criado com ❤️ e Python.</p>
+    </footer>
+
+</body>
+</html>
