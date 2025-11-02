@@ -3,7 +3,7 @@ import os
 # Configurações básicas
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-# Ajuste estes valores conforme seu MySQL local
+# Configurações do banco
 DB_USER = os.environ.get("DB_USER", "pizzaria_user")
 DB_PASS = os.environ.get("DB_PASS", "2025Polola")
 DB_HOST = os.environ.get("DB_HOST", "127.0.0.1")
@@ -16,3 +16,4 @@ SQLALCHEMY_DATABASE_URI = (
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SECRET_KEY = os.environ.get("SECRET_KEY", "troque_esta_chave_para_producao")
+
